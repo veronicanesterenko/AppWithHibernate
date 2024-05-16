@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update data</title>
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/passengers/{id}(id=${passenger.getId()})}" th:object="${passenger}">
+    <label for="name">Enter name: </label>
+    <input type="text" th:field="*{fullName}" id="name"/>
+    <div style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{fullName}">Name error</div>
+   <hr>
+
+    <input type="submit" value="Update!"/>
+</form>
+</body>
+</html>

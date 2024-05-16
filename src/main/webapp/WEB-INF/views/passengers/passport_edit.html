@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update data</title>
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/passengers/{id}/passport(id=${passenger.getId()})}" th:object="${passport}">
+    <label for="passenger_id">Enter passenger_id: </label>
+    <input type="text" th:field="*{passenger}" id="passenger_id"/>
+
+    <label for="num">Enter new passports number: </label>
+    <input type="text" th:field="*{number}" id="num"/>
+
+    <label for="cit">Enter passenger's citizenship: </label>
+    <input type="text" th:field="*{citizenship}" id="cit"/>
+
+
+    <input type="submit" value="Update!"/>
+</form>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New person</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/passengers/{id}/passport(id=${passenger.getId()})}" th:object="${passport}">
+
+    <label for="number">Enter passport's number: </label>
+    <input type="text" th:field="*{number}" id="number"/>
+    <hr>
+
+    <label for="citizenship">Enter passenger's citizenship: </label>
+    <input type="text" th:field="*{citizenship}" id="citizenship"/>
+
+
+    <input type="submit" value="Create!"/>
+
+    <!--<input type="hidden"  th:value="${passenger}">-->
+
+</form>
+</body>
+</html>

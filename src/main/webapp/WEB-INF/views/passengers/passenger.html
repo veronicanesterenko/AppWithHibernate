@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Passenger_card</title>
+</head>
+<body>
+<p th:text="${passenger.getFullName()}">
+
+</p>
+<a th:href="@{/passengers/{id}/passport/new(id=${passenger.getId()})}">Add passport!!! --></a>
+<br>
+<a th:href="@{/passengers/{id}/passport(id=${passenger.getId()})}">Passport --></a>
+
+<br>
+<hr>
+<a th:href="@{/passengers/{id}/edit(id=${passenger.getId()})}">Edit</a>
+    <form th:method="DELETE" th:action="@{/passengers/{id}(id=${passenger.getId()})}" th:object="${passenger}">
+        <input type="submit" value="Delete!"/>
+
+ </body>
+</html>

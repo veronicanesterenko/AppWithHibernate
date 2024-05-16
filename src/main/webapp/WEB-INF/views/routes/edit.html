@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update data</title>
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/routes/{id}(id=${route.getId()})}" th:object="${route}">
+    <label for="name">Enter time: </label>
+    <input type="text" th:field="*{time}" id="name"/>
+
+    <label for="dep">Enter departure point: </label>
+    <input type="text" th:field="*{departurePoint}" id="dep"/>
+
+    <label for="ar">Enter arrival point: </label>
+    <input type="text" th:field="*{arrivalPoint}" id="ar"/>
+
+    <label for="price">Enter price: </label>
+    <input type="text" th:field="*{price}" id="price"/>
+    <hr>
+
+    <input type="submit" value="Update!"/>
+</form>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Passenger_card</title>
+</head>
+<body>
+<p> Time of departure: </p>
+<p th:text="${route.getTime()}"></p>
+
+<p th:text="${route.getDeparturePoint()}"></p>
+<p th:text="${route.getArrivalPoint()}"></p>
+<p th:text="${route.getPrise()}"></p>
+<br>
+<hr>
+
+<a th:href="@{/routes/{id}/edit(id=${route.getId()})}">Edit</a>
+<form th:method="DELETE" th:action="@{/routes/{id}(id=${route.getId()})}" th:object="${route}">
+    <input type="submit" value="Delete!"/>
+
+</body>
+</html>

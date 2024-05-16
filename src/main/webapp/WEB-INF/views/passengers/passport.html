@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Passenger_card</title>
+</head>
+<body>
+<p>Passport number: </p>
+<p th:text="${passport.getNumber()}"></p>
+<br>
+<p>Citizenship: </p>
+<p th:text="${passport.getCitizenship()}"></p>
+<a th:href="@{/passengers/{id}(id=${passport.getPassenger().getId()})}">Passenger --></a>
+<a th:href="@{/passengers/{id}/passport/edit(id=${passport.getPassenger().getId()})}">Edit</a>
+
+<br>
+<hr>
+
+
+
+</body>
+</html>

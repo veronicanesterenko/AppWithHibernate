@@ -1,0 +1,38 @@
+ CREATE TABLE `hw_db`.`passenger` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `full_name` VARCHAR(120) NOT NULL,
+	PRIMARY KEY (`id`));
+
+  CREATE TABLE `hw_db`.`passport` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `number` VARCHAR(45) NOT NULL,
+  `citizenship` VARCHAR(45) NOT NULL,
+  `passenger_id` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `number_UNIQUE` (`number` ASC) VISIBLE);
+
+  CREATE TABLE `hw_db`.`route` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `time` TIME NOT NULL,
+  `date` DATE NOT NULL,
+  `departure_point` VARCHAR(120) NOT NULL,
+  `arrival_point` VARCHAR(120) NOT NULL,
+  `price` DECIMAL NOT NULL,
+  PRIMARY KEY (`id`));
+
+  CREATE TABLE `hw_db`.`seat` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `number` TINYINT NOT NULL,
+  PRIMARY KEY (`id`));
+
+ CREATE TABLE `hw_db`.`route_seat` (
+ `route_id` INT NOT NULL,
+ `seat_id` INT NOT NULL,
+ PRIMARY KEY (`route_id`, `seat_id`));
+
+  CREATE TABLE `hw_db`.`ticket` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `passenger_id` INT NOT NULL,
+   `date` DATE NOT NULL,
+   `seat_id` INT NOT NULL,
+     PRIMARY KEY (`id`));

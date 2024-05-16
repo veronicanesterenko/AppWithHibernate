@@ -28,6 +28,9 @@ public class Route {
     @Column(name = "price")
     private double price;
 
-   /* @OneToMany(mappedBy = "ticket", cascade = CascadeType.ALL)
-    private List<Ticket> tickets;*/
+    @ManyToMany
+   @JoinTable(name = "route_seat",
+           joinColumns = @JoinColumn(name = "route_id"),
+            foreignKey= @ForeignKey(name = "to_route_m2m") )
+    private List<Seat> seats;
 }

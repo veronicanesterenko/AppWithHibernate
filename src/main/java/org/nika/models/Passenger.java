@@ -23,7 +23,7 @@ public class Passenger {
     @OneToOne(mappedBy = "passenger", cascade = CascadeType.ALL)
     private Passport passport;
 
-    /*@OneToMany(mappedBy = "ticket", cascade = CascadeType.ALL)
-    private List<Ticket> ticketList;*/
+    @OneToMany(mappedBy = "passenger")
+    private List<Ticket> ticketList;
 
 }

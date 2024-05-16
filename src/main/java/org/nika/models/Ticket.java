@@ -14,16 +14,16 @@ public class Ticket {
     @Column(name = "id")
     private int id;
 
-   /* @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "passenger_id", referencedColumnName = "id")
-    private Passenger passenger;*/
+    private Passenger passenger;
 
     @Column(name = "date")
     private int date;
 
-   /* @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "route_id", referencedColumnName = "id")
-    private Route route;*/
+    @OneToOne
+    @JoinColumn(name = "seat_id", referencedColumnName = "id")
+    private Seat seat;
 
    /* @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "seat_id", referencedColumnName = "id")

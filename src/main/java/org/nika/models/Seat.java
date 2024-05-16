@@ -17,7 +17,6 @@ public class Seat {
     @Column(name = "id")
     private int id;
 
-
     @OneToOne(mappedBy = "seat", cascade = CascadeType.ALL)
     private Ticket ticket;
 
